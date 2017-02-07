@@ -7,4 +7,5 @@
 
 	$conn= mysql_pconnect($hostname, $user, $pass) or trigger_error(mysql_error(),E_USER_ERROR); 
 	mysql_select_db($database);
+	error_reporting(E_ERROR | E_PARSE);
 ?>

@@ -11,11 +11,23 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-	  <div class="container">
+	<nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container-fluid">
+	  	<div class="navbar-header">
+	      <a class="navbar-brand">
+	        <img id="logo" alt="Brand" src="img/logo.png">
+	      </a>
+	    </div>
 	    <ul class="nav nav-pills">
-		  <li role="presentation" class="active"><a href="#">Cargar archivo</a></li>
-		  <li role="presentation"><a href="datos.php">Ver datos</a></li>
+		  <li role="presentation" class="active"><a href="#">Importar</a></li>
+		  <li role="presentation"><a href="datos.php">Combustible</a></li>
+		  <li role="presentation"><a href="#">Admin Usuarios</a></li>
+		  <li role="presentation"><a href="#">Captura</a></li>
+		  <li role="presentation"><a href="#">Estadisticas</a></li>
+		  <li role="presentation"><a href="#">Reportes</a></li>
+		  <li role="presentation"><a href="#">Exportar</a></li>
+		  <li role="presentation"><a href="#">Productividad</a></li>
+		  <li role="presentation"><a href="#">Cerrar Sesion</a></li>
 		</ul>
 	  </div>
 	</nav>

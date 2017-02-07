@@ -14,52 +14,66 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-	  <div class="container">
+	<nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container-fluid">
+	  	<div class="navbar-header">
+	      <a class="navbar-brand">
+	        <img id="logo" alt="Brand" src="img/logo.png">
+	      </a>
+	    </div>
 	    <ul class="nav nav-pills">
-		  <li role="presentation"><a href="index.php">Cargar archivo</a></li>
-		  <li role="presentation" class="active"><a href="#">Ver datos</a></li>
+		  <li role="presentation"><a href="index.php">Importar</a></li>
+		  <li role="presentation" class="active"><a href="#">Combustible</a></li>
+		  <li role="presentation"><a href="#">Admin Usuarios</a></li>
+		  <li role="presentation"><a href="#">Captura</a></li>
+		  <li role="presentation"><a href="#">Estadisticas</a></li>
+		  <li role="presentation"><a href="#">Reportes</a></li>
+		  <li role="presentation"><a href="#">Exportar</a></li>
+		  <li role="presentation"><a href="#">Productividad</a></li>
+		  <li role="presentation"><a href="#">Cerrar Sesion</a></li>
 		</ul>
 	  </div>
 	</nav>
 	<div class="panel panel-default">
-		<div class="panel-heading">Base de datos</div>
+		<div class="panel-heading">Combustible</div>
 		<div class="panel-body">
 			<div class="row">
 			  <div class="col-lg-6">
 			    <div class="input-group">
-			    	<table>
-			    		<tr>
-			    			<th>Placa</th>
-			    			<th>ID Vehículo</th>
-			    			<th>Vehículo</th>
-			    			<th>Fecha</th>
-			    			<th>Centro</th>
-			    			<th>Comprobante</th>
-			    			<th>Código Pemex</th>
-			    			<th>Mercancia</th>
-			    			<th>Cantidad</th>
-			    			<th>Importe</th>
-			    		</tr>
-			    		<?php
-			    			$sql="SELECT placa, idVehiculo, descVehiculo, fecha, centro, noComprobante, codPemex, mercancia, cantMercancia, (cantMercancia*precioUni) as importe FROM data ORDER BY fecha ASC";
-			    			$result = mysql_query($sql, $conn);
-			    			while ($row = mysql_fetch_array($result)) {
-			    				echo "<tr>";
-			    				echo "<td>".$row['placa']."</td>";
-			    				echo "<td>".$row['idVehiculo']."</td>";
-			    				echo "<td>".$row['descVehiculo']."</td>";
-			    				echo "<td>".$row['fecha']."</td>";
-			    				echo "<td>".$row['centro']."</td>";
-			    				echo "<td>".$row['noComprobante']."</td>";
-			    				echo "<td>".$row['codPemex']."</td>";
-			    				echo "<td>".$row['mercancia']."</td>";
-			    				echo "<td>".$row['cantMercancia']."</td>";
-			    				echo "<td>".$row['importe']."</td>";
-			    				echo "</tr>";
-			    			}
-			    		?>
-			    	</table>
+			    	<div class="table-responsive">
+				    	<table class="table table-hover table-bordered">
+				    		<tr>
+				    			<th>Placa</th>
+				    			<th>ID Vehículo</th>
+				    			<th>Vehículo</th>
+				    			<th>Fecha</th>
+				    			<th>Centro</th>
+				    			<th>Comprobante</th>
+				    			<th>Código Pemex</th>
+				    			<th>Mercancia</th>
+				    			<th>Cantidad</th>
+				    			<th>Importe</th>
+				    		</tr>
+				    		<?php
+				    			$sql="SELECT placa, idVehiculo, descVehiculo, fecha, centro, noComprobante, codPemex, mercancia, cantMercancia, (cantMercancia*precioUni) as importe FROM data ORDER BY fecha ASC";
+				    			$result = mysql_query($sql, $conn);
+				    			while ($row = mysql_fetch_array($result)) {
+				    				echo "<tr>";
+				    				echo "<td>".$row['placa']."</td>";
+				    				echo "<td>".$row['idVehiculo']."</td>";
+				    				echo "<td>".$row['descVehiculo']."</td>";
+				    				echo "<td>".$row['fecha']."</td>";
+				    				echo "<td>".$row['centro']."</td>";
+				    				echo "<td>".$row['noComprobante']."</td>";
+				    				echo "<td>".$row['codPemex']."</td>";
+				    				echo "<td>".$row['mercancia']."</td>";
+				    				echo "<td>".$row['cantMercancia']."</td>";
+				    				echo "<td>$".$row['importe']."</td>";
+				    				echo "</tr>";
+				    			}
+				    		?>
+				    	</table>
+				    </div>
 			    </div><!-- /input-group -->
 			  </div><!-- /.col-lg-6 -->
 			</div><!-- /.row -->

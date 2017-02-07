@@ -1,1 +1,13 @@
 body { padding-top: 70px; }
+
+#logo{
+	width: 100px;
+}
+
+.container-fluid{
+	background-color: #FFC900;
+}
+
+.nav-pills li{
+	
+}

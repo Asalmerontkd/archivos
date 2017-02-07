@@ -69,6 +69,5 @@
 	   }
 	   $i++;
 	}
-	header("Location: datos.php");
-	die();
+	print '<script type="text/javascript">window.top.location.href = "datos.php";</script>';
 ?>
